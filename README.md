@@ -11,7 +11,7 @@ In this workflow, we use SimStack framework to perform dihedral scan calculation
 ```
 
 
-## Dihedral Scan workflow with **_ForEach_** loop control
+## Dihedral Scan workflow with **_Range-It_**
 
 <img src="Dihedral-Scan_workflow.png"  width="50%">
 
