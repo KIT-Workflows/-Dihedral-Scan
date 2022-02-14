@@ -1,1 +1,1 @@
-# -Dihedral-Scan
+# Dihedral-Scan
