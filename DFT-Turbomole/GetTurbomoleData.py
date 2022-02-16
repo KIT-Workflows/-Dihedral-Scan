@@ -18,11 +18,11 @@ with open('DH_ids.yml', 'r') as input:
     #Pymol work
     cmd.load('opt_geometry.xyz', 'mymol')
     cmd.set("retain_order",1)
-    AngleValue = cmd.get_dihedral("id " + str(id_list[0]), "id " + str(id_list[1]), "id " + str(id_list[2]), "id " + str(id_list[3]))
+    AngleValue = round(cmd.get_dihedral("id " + str(id_list[0]), "id " + str(id_list[1]), "id " + str(id_list[2]), "id " + str(id_list[3])), 0)
     cmd.quit()
 
     #2. obtain energy
-    EnergyValue = round(float(os.popen("eiger | grep 'Total energy =' | awk '{print $7}'").read()), 0) # energy in eV
+    EnergyValue = float(os.popen("eiger | grep 'Total energy =' | awk '{print $7}'").read()) # energy in eV
     data['Angle'] = AngleValue
     data['Energy'] = EnergyValue
 
