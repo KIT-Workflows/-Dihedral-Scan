@@ -99,7 +99,7 @@ And in the second box we will tell to ForEach all the values (list of variables)
 Range-It.iter.*
 ```
 
-hint: ForEach loop works like a "for" loop. Logical sintax : for "files" in "list of variables".
+:star2: hint: ForEach loop works like a "for" loop. Logical sintax : for "files" in "list of variables".
 
 ### Step 4: **_UnpackMol_**
 
@@ -198,4 +198,4 @@ b) Search-Parameters: By default one parameter (var) is visible, since we need "
 
 ### 7. Save and Run Workflow.
 
-Once all the settings and parameters are provided, save the workflow is mandatory, then make it RUN :D!.
+Once all the settings and parameters are provided, save the workflow (mandatory), then make it RUN :smiley:! :fire: .
