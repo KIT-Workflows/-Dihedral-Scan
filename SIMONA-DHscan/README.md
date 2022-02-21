@@ -1,4 +1,5 @@
 When publishing results obtained with DFT-VASP WaNo, please consider to cite: 
+Original repo available in: https://github.com/montserratamion/SIMONA-DHscan
 
 # SIMONA-DHscan
 
@@ -19,7 +20,7 @@ To get this workflow up running on your available computational resources, make 
 3. Pymol (API).
 4. Turbomole.
 5. SIMONA
-6. glob, tarfile, numpy, matplotlib, pandas.  
+6. glob, tarfile, numpy, matplotlib, csv, pandas.  
 ```
 ### SIMONA set up
 

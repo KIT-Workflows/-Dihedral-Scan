@@ -3,6 +3,7 @@ import os
 import sys
 import glob
 import tarfile
+import csv
 from datetime import date
 import numpy as np
 import matplotlib.pyplot as plt
@@ -1134,15 +1135,31 @@ def PostProcessSIMONA2(DHList, DHindex):
         cmd.set("retain_order",1)
         num_frames = cmd.count_frames ("traj")
         #print(SimonaFolders[folderID], num_frames)
+
+        def special_round(n, level):
+            round0 = round(n, level)
+            if round0 == -0.0:
+                return abs(round0)
+            else:
+               return round0 
+
         for idx in range(1, num_frames):
             angle = cmd.get_dihedral('name ' + DHList[folderID][0],'name '+ DHList[folderID][1] ,'name ' + DHList[folderID][2],'name ' + DHList[folderID][3], idx)
-            step_angles.append([idx, round(angle,0)])
-            angles.append(round(angle,0))
+            #step_angles.append([idx, round(angle,0)])
+            step_angles.append([idx, special_round(angle, -1)])
+            angles.append(special_round(angle, -1))
         cmd.delete("traj")
+
+        #write a file with angle vs energy in simulation directory
+        with open('angle_energy_{}.csv'.format(SimonaFolders[folderID]), 'w') as f:
+            writer = csv.writer(f)
+            writer.writerows(zip(angles, DataInFolder))
 
         #Angle vs Energy: The lowest energy values per angle step must be choosen...
         FinalUsefulData = []# angle vs energy to plot
-        AnglesLib = list(sorted(set(angles))) #types of angles
+
+        AnglesLib = list(sorted(set(angles))) #types of angles, this sort the angles by group.
+
         step_angle_energy = []
         for ai in range(0, len(angles)):
             step_angle_energy.append([ai, angles[ai], DataInFolder[ai]]) 
@@ -1173,6 +1190,7 @@ def PostProcessSIMONA2(DHList, DHindex):
         PlotDHProfiles(SimonaFolders[folderID], x, y, '{} in {}'.format(DHList[folderID], SimonaFolders[folderID]))
         #Extract PDB and xyz coordinates for next steps
         ExtractConf(SelectedFrames, SimonaFolders[folderID])
+        os.system('mv angle_energy_{}.csv -t {}'.format(SimonaFolders[folderID], SimonaFolders[folderID]))
 
         #Final Score data
         def SORT_EnergyInSimulation(sublist):

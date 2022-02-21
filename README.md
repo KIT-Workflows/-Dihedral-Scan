@@ -13,9 +13,9 @@ In this workflow, we use SimStack framework to perform dihedral scan calculation
 
 ## Dihedral Scan workflow with **_Range-It_**
 
-<img src="Dihedral-Scan_workflow.png"  width="50%">
+<img src="Figures/workflow.png"  width="50%">
 
-**Fig 1** _Scheme of the workflow ._
+**Fig 1** _Scheme of Dihedral-Scan workflow and the set up steps ._
 
 
 ## 1. Python Setup
