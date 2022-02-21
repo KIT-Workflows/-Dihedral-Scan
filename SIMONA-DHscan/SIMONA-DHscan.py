@@ -20,8 +20,6 @@ pymol.finish_launching()
 from pymol import cmd
 
 
-
-
 def SMILE_Preprocessor(MOL, SmileCode): 
     """
     Process 
@@ -1358,9 +1356,6 @@ def DFT_TurbomolePreprocessor(MOL, Step, DH_index):
         tar.add('Molecules')
 
 
-
-
-
 #-----------------__MAIN__-----------------#
 
 if __name__ == '__main__': #TODO: make the workflow control work
@@ -1413,15 +1408,12 @@ if __name__ == '__main__': #TODO: make the workflow control work
             id_list.append(ai)
         settings['DH_index'] = id_list
         
-
     #general values
     MoleculeName = settings.get('MoleculeName')
     Charge = settings.get('MoleculeNetCharge')
     Step = settings.get('RotationSteps')
     Angle = (360 / int(Step)) * 0.0174533 #radians
     print('Working with : {}, Net charge : {}, Rotation steps : {}, Delta angle: {} radians '.format(MoleculeName, Charge, Step, Angle))
-
-
 
     #Check the name and convert it to capitals if it is needed
     if MoleculeName.isupper() == False:
