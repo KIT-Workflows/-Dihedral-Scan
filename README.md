@@ -36,7 +36,9 @@ Dihedral-Workflow can be perform under 6 main steps (Figure 1).
 Each step is detailed as follow:
 
 ### Step 1: **_SIMONA-DHscan_**
-To perform the dihedral screening scan implemented in this WaNo and SIMONA it is necessary to provide the following inputs (Figure 2):
+
+
+To perform the dihedral screening scan implemented in this WaNo and SIMONA, first drag SIMONA-DHscan WaNo to the workflow area and provide the following inputs (Figure 2):
 
 <p align="center">
 <img src="Figures/step1_a.png"  width="35%">
@@ -44,13 +46,13 @@ To perform the dihedral screening scan implemented in this WaNo and SIMONA it is
 
 **Fig 2** _Manual inputs required for SIMONA-DHscan WaNo._
 
-a) Molecule Name: We highly recomend to give a name to the molecule of interest. We recomend to use only alphabetic names. They can be Capital or lower case. The firts main characters will be used to provide names to the calculation files.
+a) Molecule Name: We highly recomend to give a name to the molecule of interest. We recomend to use only alphabetic names. They can be Capital or lower case. The firts three main characters will be used to provide names to the calculation files.
 
 b) Molecule net charge: Since a parametrization step is required and partial charges will be calculated it is mandatory to provide the right net charge of the molecule of interest.
 
 c) Rotation steps: total of number of steps will be used for the 360 degree rotation. For example, if steps = 36, steps of 10 degrees will be taken.
 
-d) Dihedral Score to identify dihedrals (SIMONA): This fiel is required to select the source of the structure input for the dihedral scan. Another option  is "Generate structure inputs for DFT-Turbomole" (it only takes a PDB coordinates and generates structures for a disired dihedral id).
+d) Dihedral Score to identify dihedrals (SIMONA): This field is required to select the source of the structure input for the dihedral scan. Another option  is "Generate structure inputs for DFT-Turbomole" (it only takes a PDB coordinates and generates structures for a desired dihedral id).
 
 e)Input Dihedral Score - SIMILE code: Mandatory input. Here the user must provide the source of the molecule of interest. If SMILE code is chosen, SIMONA-DHscan will create the coordinates using General Amber Force Field library to build it. On the other hand, the user can provide PDB coordinates as initial structure.
 
@@ -66,7 +68,7 @@ The following inputs must be provided (Figure 3):
 
 **Fig 3** _a) Kind of inputs: "Structures". b) Directory path of the structure inputs._
 
-SIMONA-DHscan automatically will generate a compress file collecting all the structures for the best scored torsion angle. To access this file with Range-it, drag Range-It to the workflow and open the settings box to click on "Structures" (a) and then click in the first box form the right side (b, with red arrow) and look for the following path:
+SIMONA-DHscan automatically will generate a compress file collecting all the structures for the best scored torsion angle. To access this file with Range-it, drag Range-It into the workflow area and open the settings box to click on "Structures" (a) and then click in the first box form the right side (b, with red arrow) and look for the following path:
 
 ```
 SIMONA-DHscan/outputs/structures.tar.gz
@@ -87,7 +89,7 @@ From the list "Controls" from the left side of SimStack, drag to the workflow "F
 
 ForEach loop will allow the workflow to perform an accion using paralell resources over an interation value we will provide with Range-it. To use it for the dihedral scan worklfow it is necessary to provide the following inputs:
 
-First drag inside the Wanos UnpackMol and DFT-Turbomole (details in the next secction)
+First drag inside the ForEach loop the Wanos UnpackMol and DFT-Turbomole (details in the next secction).
 
 Then, in the first blank box from the left side we have to provide a name for the variables, in this case we will use:
 ```
