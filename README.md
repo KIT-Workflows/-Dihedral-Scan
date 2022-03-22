@@ -35,7 +35,7 @@ Dihedral-Workflow can be perform under 6 main steps (Figure 1).
 
 Each step is detailed as follow:
 
-### Step 1: **_SIMONA-DHscan_**
+### Step 1: **_SIMONA-DHscan_** [![DOI](https://zenodo.org/badge/459555048.svg)](https://zenodo.org/badge/latestdoi/459555048)
 
 
 To perform the dihedral screening scan implemented in this WaNo and SIMONA, first drag SIMONA-DHscan WaNo to the workflow area and provide the following inputs (Figure 2):
@@ -101,7 +101,7 @@ And in the second box we will tell to ForEach all the values (list of variables)
 Range-It.iter.*
 ```
 
-:star2: hint: ForEach loop works like a "for" loop. Logical sintax : for "files" in "list of variables".
+:star2: hint: ForEach loop works like a "for" loop. Logical syntax : for "files" in "list of variables".
 
 ### Step 4: **_UnpackMol_**
 
