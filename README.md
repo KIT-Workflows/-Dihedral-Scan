@@ -1,3 +1,5 @@
+When publishing results obtained with Dihedral-Scan Workflow, please consider citing it.[![DOI](https://zenodo.org/badge/459086505.svg)](https://zenodo.org/badge/latestdoi/459086505)
+
 # Dihedral-Scan
 In this workflow, we use SimStack framework to perform dihedral scan calculations to determine global and local energy configuration with a molecule of interest.
 
