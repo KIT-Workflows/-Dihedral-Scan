@@ -33,7 +33,7 @@ Dihedral-Workflow can be perform under 6 main steps (Figure 1).
 <img src="Figures/workflow.png"  width="35%">
 </p>
 
-**Fig 1** _Scheme of Dihedral-Scan workflow and it main steps._
+**Fig 1** _Scheme of Dihedral-Scan workflow and its main steps._
 
 Each step is detailed as follow:
 
